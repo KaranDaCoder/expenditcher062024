@@ -73,17 +73,6 @@ const AddExpenseForm = () => {
               onChange={handleFormSubmision}
             />
             <div className='flex flex-col items-center justify-between w-3/4 gap-2 outline-none lg:flex-row'>
-              <Datepicker
-                useRange={false}
-                asSingle={true}
-                inputClassName='py-2 w-full relative text-center border rounded-md outline-none cursor-pointer font-medium'
-                primaryColor={'lime'}
-                showShortcuts={false}
-                value={value}
-                onChange={(newValue) => setValue(newValue)}
-                placeholder='Transaction Date'
-                required={true}
-              />
               <select
                 name='payment_account'
                 id='payment_account'
@@ -99,6 +88,17 @@ const AddExpenseForm = () => {
                 <option value='account2'>Account2</option>
                 <option value='cash'>Cash</option>
               </select>
+              <Datepicker
+                useRange={false}
+                asSingle={true}
+                inputClassName='py-2 w-full text-center border rounded-md outline-none cursor-pointer font-medium'
+                primaryColor={'lime'}
+                showShortcuts={false}
+                value={value}
+                onChange={(newValue) => setValue(newValue)}
+                placeholder='Transaction Date'
+                required={true}
+              />
             </div>
 
             <div className='flex flex-col items-center justify-between w-3/4 gap-2 lg:flex-row'>
