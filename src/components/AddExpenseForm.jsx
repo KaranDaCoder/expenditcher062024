@@ -42,17 +42,17 @@ const AddExpenseForm = () => {
       </h2>
       <div className='mt-4 lg:mt-10'>
         <form onSubmit={handleCreateExpense}>
-          <div className='flex flex-col items-center justify-center gap-6 p-2 text-sm font-semibold text-slate-500'>
+          <div className='flex flex-col items-center justify-center h-full gap-6 p-2 text-sm font-semibold text-slate-500'>
             <select
               name='category'
               id='cat'
-              className='w-3/4 py-3 text-center bg-white border rounded-md outline-none cursor-pointer lg:py-2 focus:border-green-900 text-slate-600'
+              className='w-3/4 h-10 text-center bg-white border rounded-md outline-none cursor-pointer focus:border-green-900 text-slate-600'
               value={expenseObject.category}
               onChange={handleFormSubmision}
               required
             >
               <option value='' disabled='disabled'>
-                Category
+                Categoryss
               </option>
               <option value='Other'>Other</option>
               <option value='travel'>Travel</option>
@@ -63,7 +63,7 @@ const AddExpenseForm = () => {
               name='name'
               id='name'
               placeholder='Transaction name'
-              className='w-3/4 px-2 py-2 lg:py-[0.5rem] text-sm font-medium border rounded-md outline-none text-slate-600 cursor-text focus:border-green-900 placeholder:italic placeholder:text-sm placeholder:font-light bg-white'
+              className='w-3/4 h-10 px-2 text-sm font-medium bg-white border rounded-md outline-none text-slate-600 cursor-text focus:border-green-900 placeholder:italic placeholder:text-sm placeholder:font-light'
               minLength='5'
               maxLength='60'
               required
@@ -76,7 +76,7 @@ const AddExpenseForm = () => {
               <select
                 name='payment_account'
                 id='payment_account'
-                className='w-full py-3 text-sm font-semibold text-center bg-white border rounded-md outline-none cursor-pointer lg:py-2 text-slate-500 focus:ring-1 focus:ring-green-600'
+                className='w-full h-10 text-sm font-semibold text-center bg-white border rounded-md outline-none cursor-pointer text-slate-500 focus:ring-1 focus:ring-green-600'
                 value={expenseObject.payment_account}
                 onChange={handleFormSubmision}
                 required
@@ -91,7 +91,7 @@ const AddExpenseForm = () => {
               <Datepicker
                 useRange={false}
                 asSingle={true}
-                inputClassName='py-2 w-full text-center border rounded-md outline-none cursor-pointer font-medium'
+                inputClassName='py-2 w-full text-center border rounded-md outline-none cursor-pointer font-medium h-10'
                 primaryColor={'lime'}
                 showShortcuts={false}
                 value={value}
@@ -133,7 +133,7 @@ const AddExpenseForm = () => {
               <select
                 name='status'
                 id='status'
-                className='w-full py-3 text-sm font-semibold text-center bg-white border rounded-md outline-none cursor-pointer lg:py-2 lg:w-3/4 focus:border-green-900 text-slate-500'
+                className='w-full h-10 text-sm font-semibold text-center bg-white border rounded-md outline-none cursor-pointer lg:w-3/4 focus:border-green-900 text-slate-500'
                 value={expenseObject.status}
                 onChange={handleFormSubmision}
                 required
