@@ -28,7 +28,7 @@ const Navbar = () => {
           )}
         </div>
 
-        {isUserLoggedIn && <div className='items-center justify-end hidden mt-2 lg:w-full lg:gap-4 lg:space-x-2 lg:flex'>
+        {isUserLoggedIn && <div className='items-center justify-around hidden py-2 mt-2 bg-white border rounded-full shadow-lg md:w-full lg:gap-4 lg:flex'>
           <Link
             href='/dashboard'
             className='flex flex-col items-center justify-center gap-1 transition-all duration-300 hover:scale-105'
@@ -62,7 +62,6 @@ const Navbar = () => {
             href='/'
             className='flex flex-col items-center justify-center gap-1 text-red-600 transition-all duration-300 hover:scale-105'
           >
-            {' '}
             <LogoutIcon /> Logout
           </Link>
         </div>}

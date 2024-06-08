@@ -1,3 +1,4 @@
+import Featured from '@/components/Featured';
 import React from 'react'
 
 export const metadata = {
@@ -7,11 +8,10 @@ export const metadata = {
 
 const Dashboard = () => {
   return (
-    <div className='w-full min-h-[calc(100vh-10rem)] border overflow-y-auto'>
-     <p>Featured</p>
-    
+    <div className='w-full min-h-[calc(100vh-4rem)] overflow-y-auto'>
+      <Featured />
     </div>
-  )
+  );
 }
 
 export default Dashboard

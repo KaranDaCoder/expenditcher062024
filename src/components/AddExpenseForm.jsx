@@ -14,7 +14,7 @@ const AddExpenseForm = () => {
     amount: '',
     payment_account: '',
     status: '',
-    state: 'MN',
+    state: '',
     description: '',
     date: '',
   });
@@ -36,17 +36,17 @@ const AddExpenseForm = () => {
   };
 
   return (
-    <div className='w-full h-auto p-2 bg-white border shadow-lg lg:py-10 lg:w-3/4 rounded-xl'>
+    <div className='w-full h-auto bg-white border shadow-lg lg:py-10 lg:w-3/4 rounded-xl'>
       <h2 className='text-lg font-medium text-center text-green-700 lg:text-2xl'>
         Add New Expense
       </h2>
       <div className='mt-4 lg:mt-10'>
         <form onSubmit={handleCreateExpense}>
-          <div className='flex flex-col items-center justify-center gap-6 text-sm font-semibold text-slate-500'>
+          <div className='flex flex-col items-center justify-center gap-6 p-2 text-sm font-semibold text-slate-500'>
             <select
               name='category'
               id='cat'
-              className='w-3/4 py-[0.3rem] text-center border rounded-md outline-none cursor-pointer focus:border-green-900 text-slate-600'
+              className='w-3/4 py-3 text-center bg-white border rounded-md outline-none cursor-pointer lg:py-2 focus:border-green-900 text-slate-600'
               value={expenseObject.category}
               onChange={handleFormSubmision}
               required
@@ -59,11 +59,11 @@ const AddExpenseForm = () => {
               <option value='grocery'>Grocery</option>
             </select>
             <input
-              type='search'
+              type='text'
               name='name'
               id='name'
               placeholder='Transaction name'
-              className='w-3/4 px-2 py-2 text-sm font-medium border rounded-md outline-none text-slate-600 cursor-text focus:border-green-900 placeholder:italic placeholder:text-sm placeholder:font-light'
+              className='w-3/4 px-2 py-2 lg:py-[0.5rem] text-sm font-medium border rounded-md outline-none text-slate-600 cursor-text focus:border-green-900 placeholder:italic placeholder:text-sm placeholder:font-light bg-white'
               minLength='5'
               maxLength='60'
               required
@@ -76,17 +76,17 @@ const AddExpenseForm = () => {
               <select
                 name='payment_account'
                 id='payment_account'
-                className='w-full py-2 text-sm font-semibold text-center border rounded-md outline-none cursor-pointer text-slate-500 focus:ring-1 focus:ring-green-600'
+                className='w-full py-3 text-sm font-semibold text-center bg-white border rounded-md outline-none cursor-pointer lg:py-2 text-slate-500 focus:ring-1 focus:ring-green-600'
                 value={expenseObject.payment_account}
                 onChange={handleFormSubmision}
                 required
               >
-                <option value='' disabled='disabled'>
+                <option  disabled='disabled' value={''}>
                   Payment Mode
                 </option>
-                <option value='account1'>Wells Fargo Card Ending 2222</option>
-                <option value='account2'>Account2</option>
-                <option value='cash'>Cash</option>
+                <option  value='account1'>Wells Fargo Card Ending 2222</option>
+                <option  value='account2'>Account2</option>
+                <option  value='cash'>Cash</option>
               </select>
               <Datepicker
                 useRange={false}
@@ -118,7 +118,7 @@ const AddExpenseForm = () => {
                 onChange={handleFormSubmision}
               />
               <input
-                type='search'
+                type='text'
                 name='state'
                 id='state'
                 placeholder='State'
@@ -133,7 +133,7 @@ const AddExpenseForm = () => {
               <select
                 name='status'
                 id='status'
-                className='w-full py-2 text-sm font-semibold text-center border rounded-md outline-none cursor-pointer lg:w-3/4 focus:border-green-900 text-slate-500'
+                className='w-full py-3 text-sm font-semibold text-center bg-white border rounded-md outline-none cursor-pointer lg:py-2 lg:w-3/4 focus:border-green-900 text-slate-500'
                 value={expenseObject.status}
                 onChange={handleFormSubmision}
                 required
